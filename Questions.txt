@@ -1,0 +1,17 @@
+10 Questions, each 3 answers
+
+What gender are you? 
+- Male Human
+- Female Human
+- Other (transgender, Alien, ...)
+
+What color of hair do you prefer on your partner?
+- Blonde
+- Brunette
+- Redhead
+
+You get a Mr. Meeseeks Box. What's the first thing you do? 
+- Improve myself as a person. eg: Become a more complete man/woman, reduce your golf game by 2 strokes, ...
+- Improve the world. eg: End world hunger, global peace, ...
+- "I'm Mr. Meeseeks! Look at me!" 
+
