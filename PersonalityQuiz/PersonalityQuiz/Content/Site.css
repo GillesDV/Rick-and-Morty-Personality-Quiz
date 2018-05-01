@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.logoGithub{
+    text-align: center;
+}
+
+.startQuizButton {
+    text-align: center;
+}
