@@ -25,10 +25,11 @@ namespace PersonalityQuiz.Data
 
         public QuestionAndAnswers GetQuestionAndAnswers(int questionNumber)
         {
-            string question = allQuestionsAndAnswers[questionNumber, 1];
-            string answerOne = allQuestionsAndAnswers[questionNumber, 2];
-            string answerTwo = allQuestionsAndAnswers[questionNumber, 3];
-            string answerThree = allQuestionsAndAnswers[questionNumber, 4];
+            var arrayIndex = questionNumber - 1;
+            string question = allQuestionsAndAnswers[arrayIndex, 0];
+            string answerOne = allQuestionsAndAnswers[arrayIndex, 1];
+            string answerTwo = allQuestionsAndAnswers[arrayIndex, 2];
+            string answerThree = allQuestionsAndAnswers[arrayIndex, 3];
 
             return new QuestionAndAnswers(question, answerOne, answerTwo, answerThree);
         }
