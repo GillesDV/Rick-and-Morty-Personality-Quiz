@@ -27,80 +27,29 @@ namespace PersonalityQuiz.Controllers
         [HttpPost]
         public ActionResult Question1(FormCollection collection)
         {
-            string chosenAnswer = collection[0];
+            var chosenAnswer = int.Parse(collection[0]);
+            Session["Answers"] = new List<int> { chosenAnswer };
+
             return RedirectToAction("Question2");
         }
 
-        // GET: Quiz/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Question2()
         {
-            return View();
+            var questionAndAnswers = _questionsAndAnswersDataServices.GetQuestionAndAnswers(2);
+
+            return View("Question1",questionAndAnswers);
         }
 
-        // GET: Quiz/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Quiz/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Question2(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var chosenAnswer = int.Parse(collection[0]);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            var currentAnswer = Session["Answers"] as List<int>;
+            currentAnswer.Add(chosenAnswer);
+            Session["Answers"] = currentAnswer;
 
-        // GET: Quiz/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Quiz/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Quiz/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Quiz/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Question3");
         }
     }
 }
