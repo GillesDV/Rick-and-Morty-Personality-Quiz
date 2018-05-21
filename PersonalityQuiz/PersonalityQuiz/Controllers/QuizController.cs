@@ -1,4 +1,5 @@
 ﻿using PersonalityQuiz.Data;
+using PersonalityQuiz.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -166,6 +167,7 @@ namespace PersonalityQuiz.Controllers
             {
                 return RedirectToAction("Error");
             }
+            var result = QuizResultCalculator.CalculateResult(chosenAnswers);
 
             return View();
         }
