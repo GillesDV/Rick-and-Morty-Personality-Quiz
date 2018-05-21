@@ -21,7 +21,7 @@ namespace PersonalityQuiz.Controllers
         {
             var questionAndAnswers = _questionsAndAnswersDataServices.GetQuestionAndAnswers(1);
 
-            return View(questionAndAnswers);
+            return View("Question", questionAndAnswers);
         }
 
         [HttpPost]
@@ -37,7 +37,7 @@ namespace PersonalityQuiz.Controllers
         {
             var questionAndAnswers = _questionsAndAnswersDataServices.GetQuestionAndAnswers(2);
 
-            return View("Question1",questionAndAnswers);
+            return View("Question",questionAndAnswers);
         }
 
         [HttpPost]
