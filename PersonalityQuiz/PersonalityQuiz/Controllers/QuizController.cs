@@ -45,10 +45,12 @@ namespace PersonalityQuiz.Controllers
         {
             var chosenAnswer = int.Parse(collection[0]);
 
+            AddAnswerToSession(chosenAnswer);
 
             return RedirectToAction("Question3");
         }
 
+        private void AddAnswerToSession(int chosenAnswer)
         {
             var currentAnswer = Session["Answers"] as List<int>;
             currentAnswer.Add(chosenAnswer);
