@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalityQuiz.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,26 @@ namespace PersonalityQuiz.Controllers
 {
     public class QuizController : Controller
     {
+        private IQuestionsAndAnswersDataService _questionsAndAnswersDataServices = new QuestionsAndAnswersDataService();
+
         // GET: Quiz
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Question1()
+        {
+            var questionAndAnswers = _questionsAndAnswersDataServices.GetQuestionAndAnswers(1);
+
+            return View(questionAndAnswers);
+        }
+
+        [HttpPost]
+        public ActionResult Question1(FormCollection collection)
+        {
+            string chosenAnswer = collection[0];
+            return RedirectToAction("Question2");
         }
 
         // GET: Quiz/Details/5
