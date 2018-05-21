@@ -45,11 +45,14 @@ namespace PersonalityQuiz.Controllers
         {
             var chosenAnswer = int.Parse(collection[0]);
 
+
+            return RedirectToAction("Question3");
+        }
+
+        {
             var currentAnswer = Session["Answers"] as List<int>;
             currentAnswer.Add(chosenAnswer);
             Session["Answers"] = currentAnswer;
-
-            return RedirectToAction("Question3");
         }
     }
 }
