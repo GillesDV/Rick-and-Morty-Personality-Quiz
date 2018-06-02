@@ -125,6 +125,7 @@
     <Compile Include="Data\IQuestionsAndAnswersDataService.cs" />
     <Compile Include="Data\QuestionsAndAnswersDataService.cs" />
     <Compile Include="Domain\QuizResultCalculator.cs" />
+    <Compile Include="Domain\Result.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
