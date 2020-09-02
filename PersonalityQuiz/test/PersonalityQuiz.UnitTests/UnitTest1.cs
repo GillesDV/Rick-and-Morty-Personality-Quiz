@@ -9,7 +9,7 @@ namespace PersonalityQuiz.UnitTests
         [TestMethod]
         public void TestMethodForAutomaticBuild()
         {
-            bool thisVariableIsFalse = true;
+            bool thisVariableIsFalse = false;
 
             Assert.AreEqual(false, thisVariableIsFalse);
         }
